@@ -2,6 +2,11 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 <mkdocs_simple_version>"
+	exit 1
+fi
+
 mkdocs_simple_version="$1"
 
 # Delete virtualenv if present, create new one, and activate it
