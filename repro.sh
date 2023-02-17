@@ -4,8 +4,11 @@ cd "$(dirname "$0")"
 
 mkdocs_simple_version="$1"
 
+# Delete virtualenv if present, create new one, and activate it
 rm -rf venv/
 python3 -m venv venv
+source venv/bin/activate
+
 pip install mkdocs==1.4.2 mkdocs-simple-plugin=="$mkdocs_simple_version"
 
 
